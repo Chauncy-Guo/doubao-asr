@@ -1,0 +1,35 @@
+{
+  "name": "doubao-asr",
+  "description": "豆包 Seed ASR 2.0 流式语音识别 — 将本地音频文件（m4a/wav/mp3）转写为文字，支持 WebSocket 流式传输",
+  "entry_point": "doubao_asr.py",
+  "args": {
+    "audio_path": {
+      "type": "string",
+      "required": true,
+      "description": "音频文件路径（支持 m4a / mp3 / wav / aac / ogg / pcm）"
+    },
+    "--out": {
+      "type": "string",
+      "description": "输出 markdown 文件路径，默认不输出则打印到 stdout"
+    },
+    "--app-id": {
+      "type": "string",
+      "description": "豆包 App ID（也可通过环境变量 DOUBAO_APP_ID 设置）"
+    },
+    "--access-token": {
+      "type": "string",
+      "description": "豆包 Access Token（也可通过环境变量 DOUBAO_ACCESS_TOKEN 设置）"
+    },
+    "--resource-id": {
+      "type": "string",
+      "default": "volc.seedasr.sauc.duration",
+      "description": "API Resource ID，默认为 volc.seedasr.sauc.duration（ASR 2.0 模型）"
+    }
+  },
+  "env": {
+    "DOUBAO_APP_ID": "<YOUR_APP_ID>",
+    "DOUBAO_ACCESS_TOKEN": "<YOUR_ACCESS_TOKEN>",
+    "DOUBAO_SECRET_KEY": "<YOUR_SECRET_KEY>"
+  },
+  "notes": "依赖: websocket-client, python-socks. 在有代理的环境下会自动识别 http_proxy/https_proxy 并通过代理连接（SNI 被自动绕过以避免代理阻断）。"
+}
