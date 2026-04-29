@@ -59,7 +59,43 @@ python3 doubao_asr.py /path/to/audio.m4a --out result.md
 | **命令行参数** | `--app-id`, `--access-token` |
 | **代码默认值** | 直接修改 `doubao_asr.py` 顶部的 `APP_ID` / `ACCESS_TOKEN` / `SECRET_KEY` |
 
-豆包 API 凭证申请：https://console.volcengine.com/ark
+### 豆包 API 凭证申请（图文步骤）
+
+> 🤑 **新用户福利**：豆包语音新账户赠送20小时免费额度，按需充值即可。
+
+**Step 1：登录火山引擎**
+
+访问 [火山引擎控制台](https://console.volcengine.com/speech/)，完成实名认证。
+
+> ⚠️ 注意：**不要进入"智能创作"或"其他"控制台**，请务必进入 **" speech "（语音）控制台**，进入后界面示例见下方截图。
+
+**Step 2：创建应用**
+
+点击「创建应用」，按以下方式勾选：
+- ✅ 勾选 **所有：流式语音识别 2.0**（必须）
+- ✅ 勾选 **所有：录音文件识别**（建议一并勾选）
+
+**Step 3：获取 App ID 和 Access Token**
+
+进入「流式语音识别 2.0」服务页面，复制 **App ID** 和 **Access Token**，填入环境变量或 CLI 参数。
+
+**Step 4：测试并保存**
+
+在应用设置中填入凭证后，运行测试确认可用，保存即可。
+
+---
+
+**操作截图示意**
+
+以下截图来自实际申请流程，供参考：
+
+![创建应用界面](https://raw.githubusercontent.com/Chauncy-Guo/doubao-asr/main/docs/images/create-app.png)
+> 图：创建应用时需勾选「流式语音识别 2.0」和「录音文件识别」
+
+![获取凭证界面](https://raw.githubusercontent.com/Chauncy-Guo/doubao-asr/main/docs/images/get-credentials.png)
+> 图：在流式语音识别 2.0 服务中获取 App ID 和 Access Token
+
+> 📌 如截图与实际界面有出入，以火山引擎官方控制台实际显示为准。
 
 ## CLI 参数
 
